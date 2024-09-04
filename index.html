@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>GETAWAY</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      /* box-sizing: border-box; */
+    }
+    .div2 {
+      background-color: aquamarine;
+      box-sizing: border-box;
+      margin: 10px 0 0 0;
+      background-color: rgb(144, 224, 239);
+    }
+    .modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .card-img-top {
+      height: 400px;
+      /* Set a fixed height for the images */
+      object-fit: cover;
+      /* Cover the area of the image, maintaining aspect ratio */
+      width: 100%;
+      /* Make sure the image fills the width of the card */
+    }
+  </style>
+</head>
+<body>
+  <div class="divnavbar w-100 fixed-top">
+    <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand p-1" href="#">
+          <img src="imgs/dark-logo-img.png" alt="Logo" width="80" height="24" class="d-inline-block align-text-top">
+          <!-- Bootstrap -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <form class="d-flex ms-auto" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-info m-lg-1" type="submit">Search</button>
+            <button class="btn btn-outline-primary m-lg-1" data-bs-toggle="modal" data-bs-target="#idlogin"
+              type="button">Login</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="sidediv">
+    </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="imgs/h1-banner-img-2 (1).jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption  d-block rounded">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+          <button type="button" class="btn mb-2 text-capitalize" style="background-color: rgb(0, 119, 182);">Book
+            now</button>
+          <!-- <button type="button" class="btn btn-success">Success</button> -->
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imgs/blog-masonry-post-2.jpg" class="d-block w-100" alt="...">
+        <!-- <div class="sec1overlay"> -->
+        <div class="carousel-caption  d-block rounded">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+          <button type="button" class="btn mb-2 text-capitalize" style="background-color: rgb(0, 119, 182);">Book
+            now</button>
+        </div>
+        <!-- </div> -->
+      </div>
+      <div class="carousel-item">
+        <img src="imgs/h1-banner-img-3 (1).jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption  d-block rounded">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+          <button type="button" class="btn mb-2 text-capitalize" style="background-color: rgb(0, 119, 182);">Book
+            now</button>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="div2 p-4  w-100">
+    <h2>WELCOME</h2>
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, accusantium porro cum repellat, repellendus eum
+      quidem excepturi tempora eius ab libero quasi eligendi voluptates, nobis adipisci quas autem beatae. Explicabo,
+      maiores laboriosam quisquam minus impedit inventore placeat veritatis fugiat tempora!</P>
+    <button class="btn btn-outline-primary" type="submit">read more</button>
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <hr width="700px" style="height: 3px; background-color: black;">
+  </div>
+  <div class="div3 p-5 text-center rounded text-uppercase text-white" style="background-color: rgb(3, 4, 94);">
+    <h1>The destinations we wander through</h1>
+  </div>
+  <div class="accordion accordion-flush rounded" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header ">
+        <button class="accordion-button collapsed text-uppercase text-info fs-3 " type="button"
+          data-bs-toggle="collapse" data-bs-target="#flush-collapseOne " aria-expanded="false"
+          aria-controls="flush-collapseOne">
+          dahab
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ipsa mollitia officia aliquam ducimus totam ea
+          aut beatae
+          rem distinctio, quo, velit corrupti quae iure repellat eveniet neque suscipit necessitatibus dignissimos
+          veritatis
+          labore blanditiis est pariatur! Enim sit vel unde error non soluta porro eaque corrupti molestias inventore?
+          Aut ipsam
+          quae fuga labore rerum corporis, asperiores magnam adipisci ipsa eum?
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed text-uppercase text-info fs-3" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          sharm el sheikh
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ipsa mollitia officia aliquam ducimus totam ea
+          aut beatae
+          rem distinctio, quo, velit corrupti quae iure repellat eveniet neque suscipit necessitatibus dignissimos
+          veritatis
+          labore blanditiis est pariatur! Enim sit vel unde error non soluta porro eaque corrupti molestias inventore?
+          Aut ipsam
+          quae fuga labore rerum corporis, asperiores magnam adipisci ipsa eum?
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed text-uppercase text-info fs-3" type="button"
+            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false"
+            aria-controls="flush-collapseThree">
+            hurghada
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ipsa mollitia officia aliquam ducimus totam
+            ea aut beatae
+            rem distinctio, quo, velit corrupti quae iure repellat eveniet neque suscipit necessitatibus dignissimos
+            veritatis
+            labore blanditiis est pariatur! Enim sit vel unde error non soluta porro eaque corrupti molestias inventore?
+            Aut ipsam
+            quae fuga labore rerum corporis, asperiores magnam adipisci ipsa eum?
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid my-2">
+        <div class="div3 p-1   text-center rounded text-capitalize" style="background-color: rgb(202, 240, 248);">
+          <h1>Translate from English to Arabic</h1>
+        </div>
+        <p class="p-3 fs-3">
+          <span>Write translate</span><span class="text-primary"> press here</span>
+        </p>
+        <button type="button" class="btn btn-md btn-danger d-sm-block mx-4 border-0"
+          style="background-color: rgb(3, 4, 94); " data-bs-toggle="popover" data-bs-content="copied">Click to
+          copy</button>
+        <div class="d-flex justify-content-center mt-3">
+          <textarea name="" id="" class="mx-auto rounded-3" placeholder="translate: " cols="150" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="container-fluid my-2">
+        <div class="div3 p-1   text-center rounded text-capitalize" style="background-color: rgb(202, 240, 248);">
+          <h1>Translate from spanish to Arabic</h1>
+        </div>
+        <p class="p-3 fs-3">
+          <span>Write translate</span><span class="text-primary"> press here</span>
+        </p>
+        <button type="button" class="btn btn-md btn-danger d-sm-block mx-4 border-0"
+          style="background-color: rgb(3, 4, 94); " data-bs-toggle="popover" data-bs-content="copied">Click to
+          copy</button>
+        <div class="d-flex justify-content-center mt-3">
+          <textarea name="" id="" class="mx-auto rounded-3" placeholder="translate: " cols="150" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="container-fluid my-2">
+        <div class="div3 p-1   text-center rounded text-capitalize" style="background-color: rgb(202, 240, 248);">
+          <h1>Translate from frensh to Arabic</h1>
+        </div>
+        <p class="p-3 fs-3">
+          <span>Write translate</span><span class="text-primary"> press here</span>
+        </p>
+        <button type="button" class="btn btn-md btn-danger d-sm-block mx-4 border-0"
+          style="background-color: rgb(3, 4, 94); " data-bs-toggle="popover" data-bs-content="copied">Click to
+          copy</button>
+        <div class="d-flex justify-content-center mt-3">
+          <textarea name="" id="" class="mx-auto rounded-3" placeholder="translate: " cols="150" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="container text-center d-grid row-gap-5 ">
+        <div class="row ">
+          <div class="col"> <!-- col-12 col-md-6 col-lg-4 -->
+            <div class="card card11 p-2" style="width: 400px;">
+              <img class="card-img-top" src="imgs/21435707_274274236409010_8050833913368543232_n.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn  position-relative z-3" style="background-color: rgb(0, 119, 182);">See more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card11 p-2" style="width:400px">
+              <img class="card-img-top" src="imgs/21480081_915899265214947_6253973880537350144_n.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn    position-relative z-3" style="background-color: rgb(0, 119, 182);">See
+                  more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card11 p-2" style="width:400px">
+              <img class="card-img-top" src="imgs/21577324_117131149027754_6651356839017447424_n.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn    position-relative z-3" style="background-color: rgb(0, 119, 182);">See
+                  more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card card11 p-2" style="width:400px">
+              <img class="card-img-top" src="imgs/blog-masonry-post-2.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn    position-relative z-3" style="background-color: rgb(0, 119, 182);">See
+                  more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card11 p-2" style="width:400px">
+              <img class="card-img-top" src="imgs/blog-masonry-post-3.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn    position-relative z-3" style="background-color: rgb(0, 119, 182);">See
+                  more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card card11 p-2" style="width:400px">
+              <img class="card-img-top" src="imgs/licensed-image (1).jpeg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn    position-relative z-3" style="background-color: rgb(0, 119, 182);">See
+                  more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center my-3"> <!-- Centered last row -->
+          <div class="col-md-4 d-flex justify-content-center">
+            <div class="card card11 p-2" style="width: 400px;">
+              <img class="card-img-top" src="imgs/licensed-image (5).jpeg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn    position-relative z-3" style="background-color: rgb(0, 119, 182);">See
+                  more</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-center">
+            <div class="card card11 p-2" style="width: 400px;">
+              <img class="card-img-top" src="imgs/tour-1-img-1-768x768.jpg" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn    position-relative z-3" style="background-color: rgb(0, 119, 182);">See
+                  more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div3 p-3 text-center rounded text-uppercase" style="background-color: rgb(144, 224, 239);">
+      <h1>our team</h1>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4 card112">
+          <div class="card shadow-sm">
+            <div class="card-header text-white" style="background-color: rgb(32, 120, 211);">
+              <h5>All thanks and appreciation</h5>
+              <small>October 15, 2020</small>
+            </div>
+            <div class="card-body text-center">
+              <img src="imgs/8219e955fd50a0eb26959d17f4b173c7.jpg" width="100px" height="100px"
+                class="rounded-circle mb-3" alt="Profile">
+              <h6>James Harrison</h6>
+              <p class="text-muted">Travel Consultant</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4 card112">
+          <div class="card shadow-sm">
+            <div class="card-header text-white" style="background-color: rgb(32, 120, 211);">
+              <h5>All thanks and appreciation</h5>
+              <small>October 15, 2020</small>
+            </div>
+            <div class="card-body text-center">
+              <img src="imgs/d74c1008b4642a03137ef315087a9dab.jpg" width="100px" height="100px"
+                class="rounded-circle mb-3" alt="Profile">
+              <h6>Michael Turner </h6>
+              <p class="text-muted">Marketing Director</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4 card112">
+          <div class="card shadow-sm">
+            <div class="card-header text-white" style="background-color: rgb(32, 120, 211);">
+              <h5>All thanks and appreciation</h5>
+              <small>October 15, 2020</small>
+            </div>
+            <div class="card-body text-center">
+              <img src="imgs/a9b2fdb12dcf8a29b82b1ba291bcefac.jpg" width="100px" height="100px"
+                class="rounded-circle mb-3" alt="Profile">
+              <h6>David Mitchell</h6>
+              <p class="text-muted">Operations Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-4">
+      <section class="light">
+        <div class="container py-2">
+          <div class="h1 text-center text-dark text-capitalize" id="pageHeaderTitle">Some of Our Journeys</div>
+          <article class="postcard light blue">
+            <a class="postcard__img_link" href="#">
+              <img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+              <h1 class="postcard__title blue"><a href="#">The Coastal Reverie</a></h1>
+              <div class="postcard__subtitle small">
+                <time datetime="2020-05-25 12:00:00">
+                  <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                </time>
+              </div>
+              <div class="postcard__bar"></div>
+              <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+                fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus
+                nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam
+                adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum
+                quos!</div>
+              <ul class="postcard__tagbox">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+                <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                <li class="tag__item play blue">
+                  <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="postcard light red">
+            <a class="postcard__img_link" href="#">
+              <img class="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+              <h1 class="postcard__title red"><a href="#">The Desert Mirage</a></h1>
+              <div class="postcard__subtitle small">
+                <time datetime="2020-05-25 12:00:00">
+                  <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                </time>
+              </div>
+              <div class="postcard__bar"></div>
+              <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+                fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus
+                nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam
+                adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum
+                quos!</div>
+              <ul class="postcard__tagbox">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+                <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                <li class="tag__item play red">
+                  <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="postcard light green">
+            <a class="postcard__img_link" href="#">
+              <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+              <h1 class="postcard__title green"><a href="#">The Urban Safari</a></h1>
+              <div class="postcard__subtitle small">
+                <time datetime="2020-05-25 12:00:00">
+                  <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                </time>
+              </div>
+              <div class="postcard__bar"></div>
+              <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+                fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus
+                nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam
+                adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum
+                quos!</div>
+              <ul class="postcard__tagbox">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+                <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                <li class="tag__item play green">
+                  <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="postcard light yellow">
+            <a class="postcard__img_link" href="#">
+              <img class="postcard__img" src="https://picsum.photos/501/501" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+              <h1 class="postcard__title yellow"><a href="#">Whispers of the Mountains</a></h1>
+              <div class="postcard__subtitle small">
+                <time datetime="2020-05-25 12:00:00">
+                  <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+                </time>
+              </div>
+              <div class="postcard__bar"></div>
+              <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+                fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus
+                nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam
+                adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum
+                quos!</div>
+              <ul class="postcard__tagbox">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+                <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                <li class="tag__item play yellow">
+                  <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+    <div class="div3 p-3 text-center rounded mb-3 text-uppercase" style="background-color: rgb(0, 119, 182);">
+      <h1>join us</h1>
+    </div>
+    <div class="container text-center">
+      <div class="row justify-content-center justify-content-md-between">
+        <div class="col-lg-2 col-md-4 col-7 rounded-4 shadow-5 my-2" style="background-color: rgb(0, 119, 200);">
+          <h3>follow now</h3>
+          <img src="imgs/photo_2024-09-02_19-06-08.jpg" alt="" class="rounded-4" height="80px" width="80px">
+          <h3>go to link</h3>
+        </div>
+        <div class="col-lg-2 col-md-4 col-7 rounded-4 shadow-5 my-2" style="background-color: rgb(0, 119, 200);">
+          <h3>follow now</h3>
+          <img src="imgs/photo_2024-09-02_19-06-31.jpg" alt="" class="rounded-4" height="80px" width="80px">
+          <h3>go to link</h3>
+        </div>
+        <div class="col-lg-2 col-md-4 col-7 rounded-4 shadow-5 my-2" style="background-color: rgb(0, 119, 200);">
+          <h3>follow now</h3>
+          <img src="imgs/photo_2024-09-02_19-06-35.jpg" alt="" class="rounded-4" height="80px" width="80px">
+          <h3>go to link</h3>
+        </div>
+        <div class="col-lg-2 col-md-4 col-7 rounded-4 shadow-5 my-2" style="background-color: rgb(0, 119, 200);">
+          <h3>follow now</h3>
+          <img src="imgs/photo_2024-09-02_19-06-38.jpg" alt="" class="rounded-4" height="80px" width="80px">
+          <h3>go to link</h3>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <footer class=" text-center text-lg-start text-white" style="background-color: rgb(3, 4, 94);">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row mt-4">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">See other books</h5>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>Bestsellers</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>All books</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white"><i class="fas fa-user-edit fa-fw fa-sm me-2"></i>Our authors</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Execution of the contract</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Supply</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white"><i class="fas fa-backspace fa-fw fa-sm me-2"></i>Returns</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Regulations</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Privacy policy</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Publishing house</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-white">The BookStore</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">123 Street</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">05765 NY</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white"><i class="fas fa-briefcase fa-fw fa-sm me-2"></i>Send us a book</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Write to us</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-white"><i class="fas fa-at fa-fw fa-sm me-2"></i>Help in purchasing</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Check the order
+                    status</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white"><i class="fas fa-envelope fa-fw fa-sm me-2"></i>Join the
+                    newsletter</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2021 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </div>
+    <!-- End of .container -->
+    <div class="modal fade" id="idlogin" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">Remember me</label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C7zjsC34HBQX/keXPu/bO7N5ezAsz3GxUV4a3bY7lQch4/r41K1m0x3Y11R4Q+7O0" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('[data-bs-toggle="popover"]').popover();
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+</body>
+</html>
